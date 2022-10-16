@@ -1,0 +1,52 @@
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# # yarn zero install
+# .yarn/*
+# !.yarn/cache
+# !.yarn/patches
+# !.yarn/plugins
+# !.yarn/releases
+# !.yarn/sdks
+# !.yarn/versions
+
+# yarn non-zero install
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# folders
+bin
+coverage
+lib
+node_modules
+src
+test
+
+# files
+*.ts
+!*.d.ts
+*.tgz
+
+# except config
+.eslintignore
+.eslintrc.json
+.prettierignore
+.prettierrc.json
+.yarnrc.yml
+cdk.json
+jest.config.js
+tsconfig.json
+tsconfig.build.json
+.vscode

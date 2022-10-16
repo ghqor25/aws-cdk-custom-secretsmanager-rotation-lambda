@@ -1,0 +1,10 @@
+# folders
+.yarn
+coverage
+dist
+node_modules
+cdk.out
+
+# files
+package.json
+yarn.lock

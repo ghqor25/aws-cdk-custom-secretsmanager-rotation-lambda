@@ -1,0 +1,36 @@
+{
+   "root": true,
+   "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:@typescript-eslint/recommended"],
+   "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+   },
+   "parser": "@typescript-eslint/parser",
+   "parserOptions": {
+      "sourceType": "module"
+   },
+   "settings": {
+      "import/resolver": {
+         "typescript": {
+            "project": "./tsconfig.json"
+         }
+      }
+   },
+   "overrides": [
+      {
+         "files": ["**/*.test.ts"],
+         "env": { "jest": true },
+         "plugins": ["jest"],
+         "extends": ["plugin:jest/style"],
+         "rules": {
+            "jest/prefer-expect-assertions": "off",
+            "jest/no-disabled-tests": "warn",
+            "jest/no-focused-tests": "error",
+            "jest/no-identical-title": "error",
+            "jest/prefer-to-have-length": "warn",
+            "jest/valid-expect": "error"
+         }
+      }
+   ]
+}
