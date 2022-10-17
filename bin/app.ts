@@ -1,6 +1,6 @@
 import { App } from 'aws-cdk-lib';
-import { PipelineStack } from 'lib/stacks/pipeline';
+import { TestStack } from 'lib/test-stack';
 
 const app = new App();
 
-new PipelineStack(app, 'MainPipeline', {});
+new TestStack(app, 'TestStack');

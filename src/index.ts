@@ -1,1 +1,1 @@
-export * from './lib/cloudfront-invalidation/index';
+export * from './lib/rotation-lambda/index';
