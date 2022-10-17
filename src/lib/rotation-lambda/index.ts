@@ -16,8 +16,14 @@ export interface RotationLambdaProps {
    >;
 }
 
+/**
+ * simple lambda function to rotate secret
+ */
 export class RotationLambda extends Construct {
-   public readonly rotationLambda: aws_lambda.IFunction;
+   /**
+    * rotation lambda function. use this value to add rotation schedule.
+    */
+   public readonly lambdaFunction: aws_lambda.IFunction;
    constructor(scope: Construct, id: string, props: RotationLambdaProps) {
       super(scope, id);
 
@@ -32,7 +38,7 @@ export class RotationLambda extends Construct {
          REQUIRE_EACH_INCLUDED_TYPE: props.generateStringOptions?.requireEachIncludedType?.toString() ?? 'true',
       };
 
-      this.rotationLambda = new aws_lambda_nodejs.NodejsFunction(this, 'handler', {
+      this.lambdaFunction = new aws_lambda_nodejs.NodejsFunction(this, 'handler', {
          bundling: { minify: true, sourceMap: false },
          runtime: aws_lambda.Runtime.NODEJS_16_X,
          environment,

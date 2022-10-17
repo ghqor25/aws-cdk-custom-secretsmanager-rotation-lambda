@@ -16,7 +16,7 @@ export class TestStack extends Stack {
          rotationLambda: new RotationLambda(this, 'RotationLambda', {
             secret,
             generateStringOptions: { excludePunctuation: true, includeSpace: false, passwordLength: 40 },
-         }).rotationLambda,
+         }).lambdaFunction,
       });
    }
 }
