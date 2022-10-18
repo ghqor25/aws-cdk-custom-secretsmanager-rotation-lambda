@@ -1,6 +1,6 @@
 {
   "name": "@songbaek/aws-cdk-custom-secretsmanager-rotation-lambda",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "Apache-2.0",
   "keywords": [
     "aws",
@@ -27,6 +27,7 @@
     "pub": "yarn npm publish --access public"
   },
   "devDependencies": {
+    "@songbaek/aws-cdk-custom-secretsmanager-rotation-lambda": "^0.0.0",
     "@types/aws-lambda": "^8.10.107",
     "@types/jest": "^27.5.2",
     "@types/node": "10.17.27",
