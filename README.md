@@ -1,6 +1,8 @@
 # Aws Cdk Custom Construct
-Simple lambda for aws cdk secretsmanager rotationLambda.
-Use cases for just rotate secret value, not using databases.
+Custom aws cdk lambda for aws cdk secretsmanager rotationLambda.
+
+It's just for rotate secret value, not using databases.
+So It skips setSecret, testSecret, only does createSecret, finishSecret.
 
 ## Usage
 ```typescript
@@ -10,7 +12,7 @@ Use cases for just rotate secret value, not using databases.
     });
 
     secret.addRotationSchedule('SecretRotate', {
-        automaticallyAfter: Duration.days(1),
+        automaticallyAfter: Duration.days(30),
         rotationLambda: new RotationLambda(this, 'RotationLambda', {
         secret,
         generateStringOptions: { excludePunctuation: true, includeSpace: false, passwordLength: 40 },
