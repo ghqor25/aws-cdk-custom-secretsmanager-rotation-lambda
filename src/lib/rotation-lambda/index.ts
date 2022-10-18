@@ -38,8 +38,8 @@ export class RotationLambda extends Construct {
          REQUIRE_EACH_INCLUDED_TYPE: props.generateStringOptions?.requireEachIncludedType?.toString() ?? 'true',
       };
 
-      this.lambdaFunction = new aws_lambda_nodejs.NodejsFunction(this, 'handler', {
-         bundling: { minify: true, sourceMap: false },
+      this.lambdaFunction = new aws_lambda_nodejs.NodejsFunction(this, 'RotationLambda', {
+         bundling: { minify: true, sourceMap: false, sourcesContent: false, target: 'ES2020' },
          runtime: aws_lambda.Runtime.NODEJS_16_X,
          environment,
       });

@@ -6,7 +6,7 @@ import {
    PutSecretValueCommand,
    ResourceExistsException,
 } from '@aws-sdk/client-secrets-manager';
-import { toBoolean } from 'src/helper/to-boolean';
+import { toBoolean } from '../../helper/to-boolean';
 
 type VersionStage = 'AWSCURRENT' | 'AWSPENDING' | 'AWSPREVIOUS';
 
@@ -41,7 +41,7 @@ const handler: SecretsManagerRotationHandler = async (event: SecretsManagerRotat
          break;
       case 'finishSecret':
          await finishSecret(secretId, clientRequestToken);
-         console.log('handler: finishSecret completed');
+         console.log('handler: finishSecret completed. rotate secret done.');
          break;
       default:
          throw Error(`handler: Invalid step parameter. Step: ${step}`);
