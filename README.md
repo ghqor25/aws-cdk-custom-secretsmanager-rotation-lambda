@@ -16,6 +16,7 @@ Generating new secret value is done with ( GetRandomPasswordCommand / @aws-sdk/c
 
     secret.addRotationSchedule('SecretRotate', {
         automaticallyAfter: Duration.days(30),
+        // here is where to put RotationLambda
         rotationLambda: new RotationLambda(this, 'RotationLambda', {
         secret,
         generateStringOptions: { excludePunctuation: true, includeSpace: false, passwordLength: 40 },
