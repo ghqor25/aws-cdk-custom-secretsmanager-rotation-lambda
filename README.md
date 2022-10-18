@@ -1,7 +1,7 @@
 # Aws Cdk Custom Construct
 Custom aws cdk lambda for aws cdk secretsmanager rotationLambda.
 
-It's just for rotate secret value, not using databases.
+It's just for rotating secret value with provided generateStringOptions.
 
 So It skips setSecret, testSecret, only implements createSecret, finishSecret in overall rotating steps.
 
