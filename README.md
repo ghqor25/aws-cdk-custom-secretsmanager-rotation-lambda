@@ -3,9 +3,9 @@ Custom aws cdk lambda for aws cdk secretsmanager rotationLambda.
 
 It's just for rotate secret value, not using databases.
 
-So It skips setSecret, testSecret, only does createSecret, finishSecret.
+So It skips setSecret, testSecret, only implements createSecret, finishSecret in overall rotating steps.
 
-generating new secret value is done with ( GetRandomPasswordCommand / @aws-sdk/client-secrets-manager )
+Generating new secret value is done with ( GetRandomPasswordCommand / @aws-sdk/client-secrets-manager )
 
 ## Usage
 ```typescript
